@@ -24,6 +24,9 @@ dev = [
 charts = [
   "matplotlib>=3.9,<4",
 ]
+cloud = [
+  "modal>=1.5,<2",
+]
 
 [project.scripts]
 prefix-cache-lab = "ray_vllm_lab.analyzer.cli:main"

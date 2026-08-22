@@ -9,7 +9,7 @@ This document defines the scorecard before GPU runs so results cannot be selecte
 | Model | `Qwen/Qwen2.5-0.5B-Instruct` |
 | Method | LoRA, fixed rank/alpha/dropout across runs |
 | Workers / GPUs | 1 and 2, one GPU per Ray Train worker |
-| Parallelism | PyTorch FSDP with `use_orig_params=True` for LoRA |
+| Parallelism | PyTorch FSDP with PEFT-aware auto-wrapping and `use_orig_params=True` |
 | Data | Same committed train/eval split and maximum sequence length |
 | Optimizer work | Same global batch size and number of optimizer steps |
 | Repetitions | One warm-up plus three measured runs where budget permits |
@@ -55,4 +55,3 @@ Serving metrics:
 Every raw result must include the Git commit, UTC timestamp, image/dependency lock hash, GPU type and
 count, model/tokenizer revisions, CLI arguments, random seed, warm-up policy, request count, failures,
 and path to raw logs. Failed runs remain in the artifact index.
-
