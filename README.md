@@ -131,7 +131,7 @@ checks are in [results/phase2/provenance.json](results/phase2/provenance.json).
 | Interrupted-run recovery | Step-8 failure, step-6 restore, timed resume | **Complete** |
 | vLLM + Ray Serve base/adapter serving | Deployment and smoke tests | Phase 3 |
 | Prefix caching, concurrency, prompt-length matrix | Load-test report and raw request traces | Phase 3 |
-| Three-minute demo video | Linked recording | Phase 4 |
+| End-to-end operational walkthrough | Reproduction and validation sequence | Phase 4 |
 | Ray/vLLM upstream issue or PR | Maintainer-reviewed contribution | Phase 4 |
 
 ## Bottleneck investigation
@@ -171,7 +171,7 @@ data/sample/                 agentic JSONL and synthetic Prometheus fixture
 results/                     raw manifests, provenance, and human-readable reports
 charts/                      generated cache and training evidence
 tests/                       deterministic unit tests (no network or GPU)
-docs/                        benchmark contract, phase report, demo, upstream plan
+docs/                        benchmark contract, phase reports, walkthrough, upstream plan
 ```
 
 ## Roadmap

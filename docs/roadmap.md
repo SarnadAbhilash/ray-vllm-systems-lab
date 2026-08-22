@@ -34,11 +34,11 @@ Deliverables:
   and cost per million tokens.
 - Offline prediction versus observed vLLM metrics with the gap investigated.
 
-## Phase 4 — portfolio polish and upstream contribution
+## Phase 4 — validation, project hardening, and upstream contribution
 
 Deliverables:
 
-- Final 90-second README path, two or three final charts, and consolidated results table.
-- Three-minute demonstration video linked from the repository.
+- Concise operational documentation, final charts, and a consolidated results table.
+- Reproducible end-to-end walkthrough covering training, recovery, serving, and cache analysis.
 - A substantive Ray or vLLM issue/PR focused on documentation, testing, observability, or benchmarking.
 - Maintainer permission before any attempt to turn the standalone analyzer into upstream vLLM code.

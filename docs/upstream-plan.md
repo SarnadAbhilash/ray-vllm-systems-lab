@@ -15,5 +15,4 @@ Before upstream code is attempted:
 4. Open code only after maintainers confirm direction; link the resulting issue/PR and discussion in
    the final repository.
 
-This keeps the portfolio project original while respecting an active design discussion.
-
+This keeps the prototype independent while respecting the active design discussion.
