@@ -36,13 +36,19 @@ Acceptance evidence:
 - Separate cache-mode GPU functions, request-level manifests, artifact hashes, derived CSV, and three
   charts generated from raw measurements.
 
-## Phase 4 — validation, hardening, and upstream contribution
+## Phase 4 — validation, hardening, and upstream contribution (complete)
 
 Deliverables:
 
 - Concise operational documentation, final charts, and consolidated results tables. **Complete.**
 - Reproducible end-to-end walkthrough covering training, recovery, serving, and cache analysis.
   **Complete.**
-- A compact demonstration video using the checked-in artifacts.
-- A substantive Ray or vLLM issue/PR focused on documentation, testing, observability, or benchmarking.
-- Maintainer permission before any attempt to turn the standalone analyzer into upstream vLLM code.
+- A compact demonstration video using the checked-in artifacts. **Complete:** narrated 3:00 H.264
+  walkthrough with a reproducible builder.
+- A substantive Ray or vLLM issue/PR focused on documentation, testing, observability, or
+  benchmarking. **Complete:** [vLLM PR #53395](https://github.com/vllm-project/vllm/pull/53395)
+  adds APC measurement guidance and clarifies metric units.
+- Maintainer coordination before any attempt to turn the standalone analyzer into upstream vLLM
+  code. **Complete:** the measured validation and question are posted on
+  [RFC #47993](https://github.com/vllm-project/vllm/issues/47993#issuecomment-5382049460); no analyzer
+  implementation was proposed upstream.

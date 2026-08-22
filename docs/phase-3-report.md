@@ -200,5 +200,10 @@ weights loaded, during profiling or kernel warm-up.
 
 The analyzer remains independent of vLLM implementation code. It references the open
 [offline prefix-cache analyzer RFC](https://github.com/vllm-project/vllm/issues/47993) as related
-discussion, does not copy or claim the proposal, and should not be proposed upstream without first
-coordinating with maintainers.
+discussion, does not copy or claim the proposal, and was not proposed upstream before coordinating
+with maintainers. No analyzer implementation has been proposed upstream.
+
+That coordination is now recorded in the
+[RFC discussion](https://github.com/vllm-project/vllm/issues/47993#issuecomment-5382049460). The
+separate [vLLM observability documentation PR](https://github.com/vllm-project/vllm/pull/53395)
+contributes bounded measurement guidance without attempting to upstream the analyzer.

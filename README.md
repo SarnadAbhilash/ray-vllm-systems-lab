@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/SarnadAbhilash/ray-vllm-systems-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/SarnadAbhilash/ray-vllm-systems-lab/actions/workflows/ci.yml)
 
+[Watch the three-minute demonstration](demo/ray-vllm-systems-lab-demo.mp4).
+
 Training and serving LLMs are usually demonstrated as separate notebooks, which hides the hard systems questions at their boundary: whether preprocessing feeds GPUs fast enough, whether distributed checkpoints actually recover, whether an adapter can move into a production engine, and whether agentic prompt structure makes KV-cache reuse predictable. This repository builds one measured lifecycle—from Ray Data through Ray Train/FSDP and LoRA checkpoints into vLLM on Ray Serve—then tests it under controlled load. Its original component is a no-GPU prefix-cache workload analyzer that estimates reusable full KV blocks from real JSONL conversations before an inference experiment spends GPU time.
 
 > **Current milestone:** The measured train-to-serve lifecycle is complete. The repository includes
@@ -183,7 +185,7 @@ software, and cost assumptions are in
 | vLLM + Ray Serve base/adapter serving | Streaming deployment + 1,920 requests | **Complete** |
 | Prefix caching, concurrency, prompt-length matrix | Raw traces, summary, report, and charts | **Complete** |
 | End-to-end operational walkthrough | Reproduction and validation sequence | **Complete** |
-| Ray/vLLM upstream issue or PR | Substantive contribution linked from repository | Phase 4 |
+| vLLM upstream issue or PR | [APC observability documentation PR #53395](https://github.com/vllm-project/vllm/pull/53395) | **Complete** |
 
 ## Bottleneck investigation
 
@@ -224,6 +226,7 @@ infra/                      Modal GPU functions and separate pinned training/ser
 data/                       training, analyzer, and repeated-prefix serving workloads
 results/                     raw manifests, provenance, summaries, and condition tables
 charts/                      generated cache, training, and serving evidence
+demo/                        narrated three-minute walkthrough
 tests/                       deterministic unit tests (no network or GPU)
 docs/                        benchmark contract, phase reports, walkthrough, upstream plan
 ```
@@ -231,9 +234,9 @@ docs/                        benchmark contract, phase reports, walkthrough, ups
 ## Roadmap
 
 The phases, acceptance criteria, and artifact boundaries are in [docs/roadmap.md](docs/roadmap.md).
-The remaining work is operational hardening: record the compact demonstration and complete a
-substantive, maintainer-visible Ray or vLLM contribution without presenting the standalone analyzer
-as an upstream implementation.
+The measured lifecycle, demonstration, and upstream observability contribution are complete. The
+standalone analyzer remains intentionally separate from vLLM while maintainers consider the related
+RFC and measured validation.
 
 ## License
 
