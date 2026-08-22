@@ -1,0 +1,6 @@
+# Synthetic fixture used only to demonstrate the comparison command.
+# Real phase-3 runs will capture these counters directly from vLLM /metrics.
+vllm:prefix_cache_queries{model_name="Qwen/Qwen2.5-0.5B-Instruct"} 1024
+vllm:prefix_cache_hits{model_name="Qwen/Qwen2.5-0.5B-Instruct"} 608
+vllm:kv_cache_usage_perc{model_name="Qwen/Qwen2.5-0.5B-Instruct"} 0.41
+

@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "block_size": 16,
+  "predicted_hit_ratio": 0.4666666666666667,
+  "observed_hit_ratio": 0.59375,
+  "absolute_error": 0.12708333333333333,
+  "observed_query_tokens": 1024.0,
+  "observed_hit_tokens": 608.0,
+  "note": "A gap is expected when finite capacity, scheduling, interleaving, or eviction matters."
+}

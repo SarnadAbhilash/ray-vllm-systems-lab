@@ -1,0 +1,317 @@
+{
+  "schema_version": "1.0",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "tokenizer_revision": null,
+  "request_count": 10,
+  "block_sizes": [
+    8,
+    16,
+    32
+  ],
+  "results": [
+    {
+      "block_size": 8,
+      "total_prompt_tokens": 809,
+      "full_block_tokens": 776,
+      "tail_tokens": 33,
+      "estimated_reusable_tokens": 360,
+      "estimated_hit_ratio": 0.4639175257731959,
+      "unique_blocks": 52,
+      "total_blocks": 97,
+      "shared_prefix_groups": [
+        {
+          "depth_blocks": 8,
+          "shared_tokens": 64,
+          "request_ids": [
+            "travel-01",
+            "travel-02",
+            "travel-03",
+            "travel-04"
+          ]
+        },
+        {
+          "depth_blocks": 7,
+          "shared_tokens": 56,
+          "request_ids": [
+            "travel-01",
+            "travel-02",
+            "travel-03",
+            "travel-04"
+          ]
+        },
+        {
+          "depth_blocks": 7,
+          "shared_tokens": 56,
+          "request_ids": [
+            "support-01",
+            "support-02",
+            "support-03",
+            "support-batch-04"
+          ]
+        },
+        {
+          "depth_blocks": 6,
+          "shared_tokens": 48,
+          "request_ids": [
+            "travel-01",
+            "travel-02",
+            "travel-03",
+            "travel-04"
+          ]
+        },
+        {
+          "depth_blocks": 6,
+          "shared_tokens": 48,
+          "request_ids": [
+            "support-01",
+            "support-02",
+            "support-03",
+            "support-batch-04"
+          ]
+        },
+        {
+          "depth_blocks": 5,
+          "shared_tokens": 40,
+          "request_ids": [
+            "travel-01",
+            "travel-02",
+            "travel-03",
+            "travel-04"
+          ]
+        },
+        {
+          "depth_blocks": 5,
+          "shared_tokens": 40,
+          "request_ids": [
+            "support-01",
+            "support-02",
+            "support-03",
+            "support-batch-04"
+          ]
+        },
+        {
+          "depth_blocks": 4,
+          "shared_tokens": 32,
+          "request_ids": [
+            "travel-01",
+            "travel-02",
+            "travel-03",
+            "travel-04"
+          ]
+        },
+        {
+          "depth_blocks": 4,
+          "shared_tokens": 32,
+          "request_ids": [
+            "support-01",
+            "support-02",
+            "support-03",
+            "support-batch-04"
+          ]
+        },
+        {
+          "depth_blocks": 3,
+          "shared_tokens": 24,
+          "request_ids": [
+            "travel-01",
+            "travel-02",
+            "travel-03",
+            "travel-04"
+          ]
+        }
+      ],
+      "divergences": [
+        {
+          "after_blocks": 8,
+          "after_tokens": 64,
+          "request_ids": [
+            "travel-01",
+            "travel-02",
+            "travel-03",
+            "travel-04"
+          ],
+          "branch_count": 4
+        },
+        {
+          "after_blocks": 7,
+          "after_tokens": 56,
+          "request_ids": [
+            "support-01",
+            "support-02",
+            "support-03",
+            "support-batch-04"
+          ],
+          "branch_count": 4
+        }
+      ]
+    },
+    {
+      "block_size": 16,
+      "total_prompt_tokens": 809,
+      "full_block_tokens": 720,
+      "tail_tokens": 89,
+      "estimated_reusable_tokens": 336,
+      "estimated_hit_ratio": 0.4666666666666667,
+      "unique_blocks": 24,
+      "total_blocks": 45,
+      "shared_prefix_groups": [
+        {
+          "depth_blocks": 4,
+          "shared_tokens": 64,
+          "request_ids": [
+            "travel-01",
+            "travel-02",
+            "travel-03",
+            "travel-04"
+          ]
+        },
+        {
+          "depth_blocks": 3,
+          "shared_tokens": 48,
+          "request_ids": [
+            "travel-01",
+            "travel-02",
+            "travel-03",
+            "travel-04"
+          ]
+        },
+        {
+          "depth_blocks": 3,
+          "shared_tokens": 48,
+          "request_ids": [
+            "support-01",
+            "support-02",
+            "support-03",
+            "support-batch-04"
+          ]
+        },
+        {
+          "depth_blocks": 2,
+          "shared_tokens": 32,
+          "request_ids": [
+            "travel-01",
+            "travel-02",
+            "travel-03",
+            "travel-04"
+          ]
+        },
+        {
+          "depth_blocks": 2,
+          "shared_tokens": 32,
+          "request_ids": [
+            "support-01",
+            "support-02",
+            "support-03",
+            "support-batch-04"
+          ]
+        },
+        {
+          "depth_blocks": 1,
+          "shared_tokens": 16,
+          "request_ids": [
+            "travel-01",
+            "travel-02",
+            "travel-03",
+            "travel-04"
+          ]
+        },
+        {
+          "depth_blocks": 1,
+          "shared_tokens": 16,
+          "request_ids": [
+            "support-01",
+            "support-02",
+            "support-03",
+            "support-batch-04"
+          ]
+        }
+      ],
+      "divergences": [
+        {
+          "after_blocks": 4,
+          "after_tokens": 64,
+          "request_ids": [
+            "travel-01",
+            "travel-02",
+            "travel-03",
+            "travel-04"
+          ],
+          "branch_count": 4
+        },
+        {
+          "after_blocks": 3,
+          "after_tokens": 48,
+          "request_ids": [
+            "support-01",
+            "support-02",
+            "support-03",
+            "support-batch-04"
+          ],
+          "branch_count": 4
+        }
+      ]
+    },
+    {
+      "block_size": 32,
+      "total_prompt_tokens": 809,
+      "full_block_tokens": 640,
+      "tail_tokens": 169,
+      "estimated_reusable_tokens": 288,
+      "estimated_hit_ratio": 0.45,
+      "unique_blocks": 11,
+      "total_blocks": 20,
+      "shared_prefix_groups": [
+        {
+          "depth_blocks": 2,
+          "shared_tokens": 64,
+          "request_ids": [
+            "travel-01",
+            "travel-02",
+            "travel-03",
+            "travel-04"
+          ]
+        },
+        {
+          "depth_blocks": 1,
+          "shared_tokens": 32,
+          "request_ids": [
+            "travel-01",
+            "travel-02",
+            "travel-03",
+            "travel-04"
+          ]
+        },
+        {
+          "depth_blocks": 1,
+          "shared_tokens": 32,
+          "request_ids": [
+            "support-01",
+            "support-02",
+            "support-03",
+            "support-batch-04"
+          ]
+        }
+      ],
+      "divergences": [
+        {
+          "after_blocks": 1,
+          "after_tokens": 32,
+          "request_ids": [
+            "support-01",
+            "support-02",
+            "support-03",
+            "support-batch-04"
+          ],
+          "branch_count": 4
+        }
+      ]
+    }
+  ],
+  "assumptions": [
+    "Requests are evaluated in JSONL arrival order with an initially empty cache.",
+    "The estimate assumes infinite cache capacity and no eviction, preemption, or KV offload.",
+    "Only complete blocks are reusable; partial tail blocks are excluded.",
+    "The standalone SHA-256 chain models block identity but does not import or claim exact vLLM internals.",
+    "Adapter IDs and cache salts partition cache identity when present."
+  ]
+}

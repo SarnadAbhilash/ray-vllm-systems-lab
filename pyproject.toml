@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ray-vllm-systems-lab"
+version = "0.1.0"
+description = "A reproducible Ray + vLLM train-to-serve systems laboratory"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Abhilash Sarnad"}]
+dependencies = [
+  "jinja2>=3.1,<4",
+  "transformers>=4.52,<5",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<9",
+  "pytest-cov>=6,<7",
+  "ruff>=0.11,<1",
+]
+charts = [
+  "matplotlib>=3.9,<4",
+]
+
+[project.scripts]
+prefix-cache-lab = "ray_vllm_lab.analyzer.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ray_vllm_lab"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
