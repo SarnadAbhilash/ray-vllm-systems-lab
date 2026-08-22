@@ -44,11 +44,15 @@ Serving metrics:
 - **Inter-token latency / TPOT:** mean time between streamed output tokens after the first token.
 - **Request latency:** p50, p95, and p99 over completed non-warm-up requests.
 - **Throughput:** input and output tokens divided by steady-state wall time.
-- **Prefix-cache hit ratio:** increase in `vllm:prefix_cache_hits` divided by the increase in
-  `vllm:prefix_cache_queries` over the isolated run.
-- **GPU memory:** peak device memory during steady state, with model load separated from KV growth.
-- **Estimated cost per million tokens:** measured GPU-seconds multiplied by the recorded provider
-  price at run time, divided by total tokens, with input/output counts shown separately.
+- **Prefix-cache hit ratio:** sum of vLLM's per-request cached prompt tokens divided by the complete
+  block-aligned prompt tokens in the isolated condition. Partial tails are excluded consistently
+  from the predicted and observed denominators.
+- **GPU memory:** peak device memory sampled during each condition and across the matrix. Because
+  vLLM preallocates its KV-cache pool, the high watermark is interpreted as engine reservation rather
+  than model-weight size.
+- **Estimated cost per million tokens:** measured steady-state seconds multiplied by the recorded
+  requested GPU, CPU, and memory price at run time, divided by input or output tokens. Startup and
+  warm-up are excluded from condition costs and reported separately in the whole-run estimate.
 
 ## Required provenance per run
 

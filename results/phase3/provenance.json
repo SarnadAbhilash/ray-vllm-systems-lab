@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "phase3-20260822-final",
+  "benchmark_source_commit": "cc2825309c79a8e65e52eebcdd22b0672b3c262f",
+  "modal_run_url": "https://modal.com/apps/sarnadabhilash/main/ap-gkK1ZCiTQLSbSf9jPNs6OW",
+  "run_date_utc": "2026-08-22",
+  "hardware": "NVIDIA L4 24 GB; isolated cache-off and cache-on single-GPU functions",
+  "software": {
+    "python": "3.11.0",
+    "ray": "2.57.0",
+    "torch": "2.11.0+cu130",
+    "transformers": "4.57.6",
+    "vllm": "0.23.0"
+  },
+  "model": {
+    "id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "adapter": {
+    "volume_path": "/artifacts/phase2/adapters/phase2-20260822-final-2gpu",
+    "rank": 8,
+    "training_provenance": "../phase2/provenance.json"
+  },
+  "measurement": {
+    "block_size_tokens": 16,
+    "max_model_length_tokens": 1024,
+    "output_tokens_per_request": "8 minimum, 16 maximum",
+    "temperature": 0.0,
+    "concurrency_levels": [1, 8, 32, 64],
+    "prompt_shapes": ["short", "long", "agentic"],
+    "targets": ["base", "adapter"],
+    "request_count": "32 per condition, increased to 64 at concurrency 64",
+    "replications": 1
+  },
+  "cost_model": {
+    "gpu_usd_per_hour": 0.8,
+    "cpu_usd_per_core_hour": 0.0473,
+    "memory_usd_per_gib_hour": 0.008,
+    "reserved_cpus": 8,
+    "reserved_memory_gib": 32,
+    "requested_resource_usd_per_hour": 1.4344,
+    "estimated_two_function_cost_usd": 0.2607,
+    "note": "The function estimate includes startup, warm-up, and benchmarks; per-token estimates use steady-state condition windows only and are not an invoice."
+  },
+  "raw_artifacts": {
+    "raw/modal-results.json": "6697f53bffb9a9bdae65af9d9d1f28d5591219485927ad81d634144ed92b24fb",
+    "raw/manifests/prefix-off.json": "7aa907cf48818544555de8b135f3c5a43c18bbd20aecfb91f376462a9a39cc87",
+    "raw/manifests/prefix-on.json": "39e595d3f38ad2c0d35173e537784900bd6a2b0f971345c649297479ab7a5673",
+    "summary.json": "c117b79bb4c5edda28a4784f84f251306528dd1ddad2a933d079b5f026f74232",
+    "conditions.csv": "e158b3690cece187543dc8c68381e681b941bb731e6f9b8989d2a1f8b5970e09"
+  },
+  "measurement_note": "One measured run per condition; results characterize this fixed workload and are not confidence intervals."
+}

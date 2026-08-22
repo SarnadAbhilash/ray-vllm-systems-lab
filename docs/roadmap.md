@@ -23,9 +23,9 @@ Acceptance evidence:
   base/adapter quality.
 - Raw run manifests, artifact hashes, adapter tensor integrity, and charts generated from artifacts.
 
-## Phase 3 — vLLM + Ray Serve inference lab
+## Phase 3 — vLLM + Ray Serve inference lab (complete)
 
-Deliverables:
+Acceptance evidence:
 
 - Base and LoRA adapter served through a Ray Serve deployment wrapping vLLM.
 - Streaming load generator for concurrency 1/8/32/64 and short/long/repeated-prefix workloads.
@@ -33,12 +33,16 @@ Deliverables:
 - TTFT, TPOT/inter-token latency, p50/p95/p99, input/output throughput, GPU memory, cache hit ratio,
   and cost per million tokens.
 - Offline prediction versus observed vLLM metrics with the gap investigated.
+- Separate cache-mode GPU functions, request-level manifests, artifact hashes, derived CSV, and three
+  charts generated from raw measurements.
 
-## Phase 4 — validation, project hardening, and upstream contribution
+## Phase 4 — validation, hardening, and upstream contribution
 
 Deliverables:
 
-- Concise operational documentation, final charts, and a consolidated results table.
+- Concise operational documentation, final charts, and consolidated results tables. **Complete.**
 - Reproducible end-to-end walkthrough covering training, recovery, serving, and cache analysis.
+  **Complete.**
+- A compact demonstration video using the checked-in artifacts.
 - A substantive Ray or vLLM issue/PR focused on documentation, testing, observability, or benchmarking.
 - Maintainer permission before any attempt to turn the standalone analyzer into upstream vLLM code.

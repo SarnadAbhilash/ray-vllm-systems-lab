@@ -9,6 +9,8 @@ maintainers' design decision.
 Before upstream code is attempted:
 
 1. Complete the local predicted-versus-observed study and publish the workload, assumptions, and gap.
+   **Complete:** 24 cache-on conditions produced 0.28 percentage points mean absolute error and 0.95
+   points maximum error; the raw manifests and limitations are checked in.
 2. Ask maintainers whether the experiment is useful and whether a stable helper/API is wanted.
 3. Prefer a bounded first contribution: analyzer test cases, metrics documentation, a benchmark corpus
    schema, or observability guidance.

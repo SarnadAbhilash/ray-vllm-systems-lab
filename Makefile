@@ -1,4 +1,4 @@
-.PHONY: install test lint analyze charts verify
+.PHONY: install test lint analyze serving-summary charts verify
 
 install:
 	uv sync --extra dev --extra charts
@@ -14,8 +14,14 @@ analyze:
 		--output results/sample/prefix-cache-report.json \
 		--markdown results/sample/prefix-cache-report.md
 
-charts:
+serving-summary:
+	uv run python scripts/summarize_serving.py results/phase3/raw/modal-results.json \
+		--json results/phase3/summary.json \
+		--csv results/phase3/conditions.csv
+
+charts: serving-summary
 	uv run python scripts/plot_analyzer.py results/sample/prefix-cache-report.json --output-dir charts
 	uv run python scripts/plot_training.py results/phase2/raw/modal-results.json --output-dir charts/phase2
+	uv run python scripts/plot_serving.py results/phase3/raw/modal-results.json --output-dir charts/phase3
 
 verify: lint test analyze charts

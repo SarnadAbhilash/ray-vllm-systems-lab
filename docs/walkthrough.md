@@ -1,7 +1,7 @@
 # End-to-end operational walkthrough
 
-This walkthrough is completed alongside the serving phase. It provides a compact validation path for
-the entire system without replacing the exact reproduction commands or raw artifacts.
+This walkthrough provides a compact validation path for the entire system without replacing the
+exact reproduction commands or raw artifacts.
 
 ## 1. Architecture and inputs
 
@@ -17,17 +17,24 @@ restores from the last durable checkpoint, reports replayed optimizer steps, and
 ## 3. Serving and load behavior
 
 Deploy the base model and named LoRA adapter through Ray Serve and vLLM. Query both paths, then run the
-fixed concurrency and prompt-shape matrix. Inspect TTFT, TPOT, request latency percentiles, token
-throughput, GPU memory, and continuous-batching behavior.
+fixed concurrency and prompt-shape matrix. Confirm `maximum_observed_active_requests` reaches the
+requested concurrency, then inspect TTFT, TPOT, request latency percentiles, token throughput, GPU
+memory, and condition-level cost estimates.
 
 ## 4. Prefix-cache validation
 
-Run the offline analyzer on the agentic JSONL workload. Compare block sizes, full-block alignment, and
-cache namespace fragmentation. Capture isolated vLLM prefix-cache counters and compare observed token
-hit ratio with the offline prediction.
+Run the offline analyzer on the exact ordered serving workload. Compare block sizes, full-block
+alignment, and cache namespace fragmentation. For each isolated condition, divide vLLM's per-request
+cached tokens by complete 16-token prompt blocks and compare the observed ratio with the offline
+prediction. Cache-off conditions must report zero reuse.
 
 ## 5. Reproducibility checks
 
 Finish by verifying the source commit, dependency versions, hardware manifest, raw result hashes,
 tests, and chart regeneration. Any failed experiment that changes the implementation or interpretation
 belongs in the relevant phase report.
+
+Measured evidence is organized in
+[`phase-1-report.md`](phase-1-report.md), [`phase-2-report.md`](phase-2-report.md), and
+[`phase-3-report.md`](phase-3-report.md). The top-level `make verify` command checks source, tests,
+the analyzer report, every derived summary, and all charts from the checked-in raw inputs.
