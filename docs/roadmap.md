@@ -11,16 +11,17 @@ Acceptance criteria:
 - JSON/Markdown reports, two charts, and vLLM Prometheus comparison are reproducible.
 - CI passes from a clean checkout.
 
-## Phase 2 — Ray Data + Ray Train/FSDP LoRA
+## Phase 2 — Ray Data + Ray Train/FSDP LoRA (complete)
 
-Deliverables:
+Acceptance evidence:
 
-- Frozen instruction dataset manifest and Ray Data preprocessing pipeline.
+- Frozen instruction dataset revisions and Ray Data preprocessing pipeline.
 - Ray Train V2 `TorchTrainer` entrypoint with PyTorch FSDP and PEFT LoRA.
-- Modal image, secrets, persistent Volume, and 1/2-GPU launch commands.
-- Checkpoint save/load with an intentional one-time failure and timed recovery.
-- Training throughput, GPU memory, scaling efficiency, recovery time, and fixed base/adapter quality.
-- Raw run manifests and charts generated from artifacts, not hand-entered values.
+- Modal image, persistent Volumes, and 1/2-GPU launch commands; no credentials in the repository.
+- Checkpoint save/load with an intentional one-time failure and timed automatic recovery.
+- Training throughput, GPU utilization/memory, scaling efficiency, recovery time, and fixed
+  base/adapter quality.
+- Raw run manifests, artifact hashes, adapter tensor integrity, and charts generated from artifacts.
 
 ## Phase 3 — vLLM + Ray Serve inference lab
 
@@ -41,4 +42,3 @@ Deliverables:
 - Three-minute demonstration video linked from the repository.
 - A substantive Ray or vLLM issue/PR focused on documentation, testing, observability, or benchmarking.
 - Maintainer permission before any attempt to turn the standalone analyzer into upstream vLLM code.
-

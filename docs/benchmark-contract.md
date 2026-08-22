@@ -12,7 +12,7 @@ This document defines the scorecard before GPU runs so results cannot be selecte
 | Parallelism | PyTorch FSDP with PEFT-aware auto-wrapping and `use_orig_params=True` |
 | Data | Same committed train/eval split and maximum sequence length |
 | Optimizer work | Same global batch size and number of optimizer steps |
-| Repetitions | One warm-up plus three measured runs where budget permits |
+| Repetitions | Two warm-up optimizer steps; one measured run per condition in the Phase-2 budget |
 | Recovery | Inject exactly one failure after a durable checkpoint |
 
 Training metrics:
@@ -24,8 +24,8 @@ Training metrics:
 - **Two-GPU scaling efficiency:** `throughput_2gpu / (2 * throughput_1gpu)`.
 - **Checkpoint recovery time:** wall time from injected failure detection until the first successful
   post-restore optimizer step.
-- **Quality:** exact-match and token-level F1 on one frozen evaluation file, measured with the same
-  deterministic generation settings for base and adapter.
+- **Quality:** teacher-forced loss, perplexity, and next-token accuracy on one frozen evaluation
+  slice. Deterministic generation quality is measured later through the shared serving harness.
 
 ## Serving matrix
 
@@ -52,6 +52,7 @@ Serving metrics:
 
 ## Required provenance per run
 
-Every raw result must include the Git commit, UTC timestamp, image/dependency lock hash, GPU type and
-count, model/tokenizer revisions, CLI arguments, random seed, warm-up policy, request count, failures,
-and path to raw logs. Failed runs remain in the artifact index.
+Every checked-in result must include the benchmark-source commit, UTC timestamp, locked dependency
+versions, GPU type and count, model/tokenizer revisions, random seed, warm-up policy, request count,
+failures, and paths to raw manifests. Failed integration gates are preserved in the phase report even
+when provider logs are not copied into Git.

@@ -16,6 +16,6 @@ analyze:
 
 charts:
 	uv run python scripts/plot_analyzer.py results/sample/prefix-cache-report.json --output-dir charts
+	uv run python scripts/plot_training.py results/phase2/raw/modal-results.json --output-dir charts/phase2
 
 verify: lint test analyze charts
-

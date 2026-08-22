@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "phase2-20260822-final",
+  "benchmark_source_commit": "c237d7446be8e98fbf95c8b6590ef13039077cb5",
+  "modal_run_url": "https://modal.com/apps/sarnadabhilash/main/ap-giP8dB6IsVd6uL5kPJr0wz",
+  "run_date_utc": "2026-08-22",
+  "hardware": "NVIDIA L4 24 GB; one- and two-GPU single-container runs",
+  "software": {
+    "python": "3.11.0",
+    "ray": "2.57.0",
+    "torch": "2.8.0+cu128"
+  },
+  "model": {
+    "id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "dataset": {
+    "id": "databricks/databricks-dolly-15k",
+    "revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a"
+  },
+  "raw_artifacts": {
+    "modal-results.json": "34ada1b63c8dab0ad44aea9cadfcca950467316a9d777f1e60a83604478f24e5",
+    "manifests/one-gpu/manifest.json": "aaaf934a2a19da4a270e9bd00adab4e59d0e70c5a619943317941e3e29c6db25",
+    "manifests/two-gpu/manifest.json": "658ab6e64fb597893dca101e069368baa4abf83fa135fe96a66fd1fcbcc05b7d",
+    "manifests/recovery/manifest.json": "7672d23b7209873b228469aa5142a220b7ad26cf2f0a86e30893a8045c98ae38"
+  },
+  "adapter_integrity": {
+    "one_gpu": {
+      "volume_path": "/artifacts/phase2/adapters/phase2-20260822-final-1gpu",
+      "tensor_count": 192,
+      "bytes": 4350392,
+      "sha256": "c2db3d42872bfb9b9aa7b0bd6a5bd99e0aab92a8594069ccac471a97273dbb26"
+    },
+    "two_gpu": {
+      "volume_path": "/artifacts/phase2/adapters/phase2-20260822-final-2gpu",
+      "tensor_count": 192,
+      "bytes": 4350392,
+      "sha256": "76f49283cfc3d35088946655ee79d0fc7182c2675d8c60321c8d79ee236c2e38"
+    },
+    "recovery": {
+      "volume_path": "/artifacts/phase2/adapters/phase2-20260822-final-recovery",
+      "tensor_count": 192,
+      "bytes": 4350392,
+      "sha256": "4666993126fce81bc4f7be8337340bbbbe82a7f17d0ee12baa6973e487680a47"
+    }
+  },
+  "measurement_note": "One measured run per condition; results characterize this small fixed workload and are not confidence intervals."
+}
